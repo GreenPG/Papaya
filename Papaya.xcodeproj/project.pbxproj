@@ -13,6 +13,7 @@
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		F1FFF6732FCF1A2700E66EA4 /* Exceptions for "Papaya" folder in "Papaya" target */ = {
 =======
 		8798E0DC2FD067FE00C285B0 /* Exceptions for "Papaya" folder in "Papaya" target */ = {
@@ -20,6 +21,9 @@
 =======
 		F1FFF6732FCF1A2700E66EA4 /* Exceptions for "Papaya" folder in "Papaya" target */ = {
 >>>>>>> ea27938 (ShopCard Child View and User struct maj)
+=======
+		8798E0DC2FD067FE00C285B0 /* Exceptions for "Papaya" folder in "Papaya" target */ = {
+>>>>>>> 3c19e87 ( add commentModel et messagerie)
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -34,6 +38,7 @@
 			exceptions = (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				F1FFF6732FCF1A2700E66EA4 /* Exceptions for "Papaya" folder in "Papaya" target */,
 =======
 				8798E0DC2FD067FE00C285B0 /* Exceptions for "Papaya" folder in "Papaya" target */,
@@ -41,6 +46,9 @@
 =======
 				F1FFF6732FCF1A2700E66EA4 /* Exceptions for "Papaya" folder in "Papaya" target */,
 >>>>>>> ea27938 (ShopCard Child View and User struct maj)
+=======
+				8798E0DC2FD067FE00C285B0 /* Exceptions for "Papaya" folder in "Papaya" target */,
+>>>>>>> 3c19e87 ( add commentModel et messagerie)
 			);
 			path = Papaya;
 			sourceTree = "<group>";
