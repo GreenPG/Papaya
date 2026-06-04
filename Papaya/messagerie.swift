@@ -10,6 +10,9 @@ import SwiftUI
 struct messagerie: View {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3c19e87 ( add commentModel et messagerie)
     //faire une copie du array messages pour pouvoir appliquer un state et un append pour mettre a jour la conv
     
     @State private var comment: String = ""
@@ -88,7 +91,18 @@ struct messagerie: View {
                     }label: {
                         Image(systemName: "paperplane.fill")
                     }
+<<<<<<< HEAD
 >>>>>>> 004f4b6 (add shopView + ShopCard)
+=======
+=======
+    var body: some View {
+        VStack{
+            VStack {
+//                let sender = User(userName: "Mister Courgette", userID: 2, userMembershipSince: <#Date?#>,userAdress: "blabla", userStarRating: 5, userEverySell: 12)
+                ZStack{
+                    
+>>>>>>> 8caff06 ( add commentModel et messagerie)
+>>>>>>> 3c19e87 ( add commentModel et messagerie)
                 }
             }
         }
@@ -96,5 +110,9 @@ struct messagerie: View {
 }
 
 #Preview {
+<<<<<<< HEAD
     messagerie(user: <#T##User#>)
+=======
+    messagerie()
+>>>>>>> 8caff06 ( add commentModel et messagerie)
 }
