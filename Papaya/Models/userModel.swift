@@ -10,7 +10,7 @@ import Foundation
 struct User {
     let userName: String
     let userID: Int
-    let userMembershipSince: Date
+    let userMembershipSince: Date?
     let userAdress: String
     let userStarRating: Float
     let userEverySell: Int
