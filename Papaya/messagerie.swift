@@ -11,7 +11,7 @@ struct messagerie: View {
     //faire une copie du array messages pour pouvoir appliquer un state et un append pour mettre a jour la conv
     
     @State private var comment: String = ""
-    @State private var validComment: [String ]= [""]
+    @State private var validComment: [String] = [""]
 //    var user: User
     var body: some View {
         VStack {
