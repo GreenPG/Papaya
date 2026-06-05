@@ -41,7 +41,6 @@ struct ShopCardView: View {
                             .font(.system(size: 40))
                             .foregroundStyle(.greenPapaya)
                             .padding(.horizontal)
-                        
                     }
                 }
                 
