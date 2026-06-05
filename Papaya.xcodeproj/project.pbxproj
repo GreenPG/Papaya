@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F1FFF6732FCF1A2700E66EA4 /* Exceptions for "Papaya" folder in "Papaya" target */ = {
+		9BD7132B2FD1B5F7000016CA /* Exceptions for "Papaya" folder in "Papaya" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -24,7 +24,7 @@
 		9B6682BD2FCDA6EB00EC46E4 /* Papaya */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				F1FFF6732FCF1A2700E66EA4 /* Exceptions for "Papaya" folder in "Papaya" target */,
+				9BD7132B2FD1B5F7000016CA /* Exceptions for "Papaya" folder in "Papaya" target */,
 			);
 			path = Papaya;
 			sourceTree = "<group>";
