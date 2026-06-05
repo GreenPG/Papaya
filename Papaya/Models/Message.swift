@@ -11,7 +11,11 @@ struct Message: Identifiable {
     let id = UUID() // nom de la variable imposé
     let content: String
     let date: String/*Date*/
+<<<<<<< HEAD
     var isUser: Bool = true
+=======
+    let isUser: Bool = true
+>>>>>>> 3961c4a (Modele message et modele bubleMessage)
     
     
     init(content: String, date: String, isUser: Bool = true) {

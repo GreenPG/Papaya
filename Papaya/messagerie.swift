@@ -11,8 +11,11 @@ struct messagerie: View {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3c19e87 ( add commentModel et messagerie)
+=======
+>>>>>>> b8d6943 (Modele message et modele bubleMessage)
     //faire une copie du array messages pour pouvoir appliquer un state et un append pour mettre a jour la conv
     
     @State private var comment: String = ""
@@ -95,14 +98,46 @@ struct messagerie: View {
 >>>>>>> 004f4b6 (add shopView + ShopCard)
 =======
 =======
+=======
+    //faire une copie du array messages pour pouvoir appliquer un state et un append pour mettre a jour la conv
+    
+    @State private var comment: String = ""
+    @State private var validComment: [String ]= [""]
+//    var user: User
+>>>>>>> 3961c4a (Modele message et modele bubleMessage)
     var body: some View {
-        VStack{
-            VStack {
-//                let sender = User(userName: "Mister Courgette", userID: 2, userMembershipSince: <#Date?#>,userAdress: "blabla", userStarRating: 5, userEverySell: 12)
-                ZStack{
+        VStack {
+            VStack /*(.alignment.center)*/{
+//                Image()
+//                ZStack{}
+                //recup le profil + mise forme
+            }
+
+            VStack{
+                //recup message
+                ForEach(messages) {message in
+                    BubbleMessage(message: message)
+                }
+//
+            }
+            
+            HStack {
+                TextField("Saisissez votre commentaire", text: $comment) // Var bindée car il y a de l'affichage et la modif
+                Button{
+                    validComment = $comment
                     
+<<<<<<< HEAD
 >>>>>>> 8caff06 ( add commentModel et messagerie)
+<<<<<<< HEAD
 >>>>>>> 3c19e87 ( add commentModel et messagerie)
+=======
+=======
+                    
+                    comment = ""
+                }label: {
+                    Image(systemName: "paperplane.fill")
+>>>>>>> 3961c4a (Modele message et modele bubleMessage)
+>>>>>>> b8d6943 (Modele message et modele bubleMessage)
                 }
             }
         }
