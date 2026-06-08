@@ -10,7 +10,7 @@ import Foundation
 
 struct Article: Identifiable {
     var id: UUID = UUID()
-    var name: String
+    var name: String    
     var imageName: String
     var description: String
     var isLiked: Bool
