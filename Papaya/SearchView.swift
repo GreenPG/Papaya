@@ -12,11 +12,11 @@ struct SearchView: View {
     @State private var listArticles = articles
     
     var body: some View {
+        
         ZStack{
-            LinearGradient(gradient: Gradient(colors: [.white, .white, .lightGreenPapaya]), startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
-
-                
+            BackgroundView()
+//            LinearGradient(gradient: Gradient(colors: [.white, .white, .lightGreenPapaya]), startPoint: .top, endPoint: .bottom)
+//                .ignoresSafeArea()
             VStack{
                 
                 Image("papaya")
