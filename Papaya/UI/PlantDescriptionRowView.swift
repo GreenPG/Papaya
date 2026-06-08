@@ -1,0 +1,6 @@
+       Image(systemName: "chart.line.uptrend.xyaxis")
+                            .font(.system(size: 35))
+                            .foregroundStyle(.greenPapaya)
+                            .frame(minWidth: 50, alignment: .center)
+                        Text(plant.yield)
+                        Spacer()
