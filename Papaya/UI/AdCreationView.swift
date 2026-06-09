@@ -24,6 +24,7 @@ struct AdCreationView: View {
     @State var pickerImage: Image?
     @State var tagSelection: AdTag = AdTag.seeds
     @State var description: String = ""
+    @State var isContactShowed: Bool = false
     var body: some View {
         ZStack{
             BackgroundView()
@@ -105,6 +106,11 @@ struct AdCreationView: View {
                             .cornerRadius(8)
 
                         }
+                        HStack {
+                            Toggle(
+                                "Afficher votre adresse",
+                                isOn: $isContactShowed
+                            )
                         }
                         .frame(width: .infinity)
                         .padding()
