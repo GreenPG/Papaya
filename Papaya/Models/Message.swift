@@ -11,7 +11,7 @@ struct Message: Identifiable {
     let id = UUID() // nom de la variable imposé
     let content: String
     let date: String/*Date*/
-    let isUser: Bool = true
+    var isUser: Bool = true
     
     
     init(content: String, date: String, isUser: Bool = true) {
