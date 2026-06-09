@@ -9,10 +9,10 @@ import SwiftUI
 import PhotosUI
 
 enum AdTag: String,  CaseIterable, Identifiable {
-    case seeds
-    case seedling
-    case material
-    case soil
+    case seeds = "Graine"
+    case seedling = "Plant"
+    case material = "Matériel"
+    case soil = "Terreau"
     
     var id: Self { self }
 }
@@ -74,6 +74,23 @@ struct AdCreationView: View {
                         .background(.textField)
                         .cornerRadius(8)
                         .shadow(radius: 5)
+                        HStack {
+                            Text("Tag")
+                            Spacer()
+                            Menu {
+                                ForEach(AdTag.allCases) { tag in
+                                    Button {
+                                        tagSelection = tag
+                                    } label: {
+                                        Text(tag.rawValue)
+                                    }
+                                }
+                            } label: {
+                                Text(tagSelection.rawValue)
+                                Image(systemName: "chevron.up.chevron.down")
+                            }
+                            .foregroundStyle(.black)
+                        }
                             .padding(5)
                             .frame(height: 50)
                             .background(.textField)
