@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct ShopCardView: View {
+//    @Binding var card: ShopCard
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        BackgroundView()
+//        VStack {
+//            // voir avec axel pour le contour de la card
+//            Image(card.image)
+//                .resizable()
+//                .frame()
+//            VStack(alignment: .leading, spacing: 8) {
+//                Text(card.title)
+//                    .font(.title2)
+//                    .fontWeight(.bold)
+//                
+//                Text(card.description)
+//                    .multilineTextAlignment(.leading)
+//                //TAG?
+//            }
+//            Spacer()
+//            
+////            Button { ICI OU DANS shopView???
+////            } label: {
+////            }
+//        }
     }
 }
 
