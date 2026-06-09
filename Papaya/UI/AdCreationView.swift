@@ -91,11 +91,18 @@ struct AdCreationView: View {
                             }
                             .foregroundStyle(.black)
                         }
+                        HStack(alignment: .top) {
+                            Text("Description")
+                                .padding(5)
+                            TextField(
+                                "Description",
+                                text: $description,
+                                axis: .vertical
+                            )
                             .padding(5)
-                            .frame(height: 50)
+                            .lineLimit(5, reservesSpace: true)
                             .background(.textField)
                             .cornerRadius(8)
-                    }
 
                         }
                         }
@@ -116,9 +123,7 @@ struct AdCreationView: View {
                             print("Failed to load image")
                         }
                     }
-                    HStack {
-                        Text("Description")
-                        TextField("Description", text: $description)
+                }
                     }
                 }
             }
