@@ -31,15 +31,15 @@ struct AdCreationView: View {
                 HStack {
                     Text("Poster votre annonce")
                         .font(
-                            .custom("Courgette", size: 32, relativeTo: .title)
+                            .custom(
+                                "Courgette",
+                                size: 32,
+                                relativeTo: .title
+                            )
                         )
-                    Spacer()
                 }
                 Form {
-                    HStack {
-                        Text("Titre")
-                            .font(.title3)
-                        TextField("Titre", text:  $title)
+                    Section {
                             .padding(5)
                             .frame(height: 50)
                             .background(.textField)
@@ -56,6 +56,7 @@ struct AdCreationView: View {
                         .frame(width: .infinity)
                         .padding()
                     }
+                    .listRowBackground(Color.clear)
                     .frame(width: .infinity, height:200)
                     .background(.textField)
                     .cornerRadius(8)
