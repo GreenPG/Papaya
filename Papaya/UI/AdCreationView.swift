@@ -112,8 +112,6 @@ struct AdCreationView: View {
                                 isOn: $isContactShowed
                             )
                         }
-                        .frame(width: .infinity)
-                        .padding()
                     }
                     .listRowBackground(Color.clear)
                 }
@@ -130,6 +128,7 @@ struct AdCreationView: View {
                         }
                     }
                 }
+                .scrollContentBackground(.hidden)
                 HStack {
                     Spacer()
                     NavigationLink {
@@ -148,8 +147,8 @@ struct AdCreationView: View {
                     .padding(.trailing, 20)
                 }
             }
+            .padding()
         }
-        .padding()
     }
 }
 
