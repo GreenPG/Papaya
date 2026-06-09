@@ -40,6 +40,15 @@ struct AdCreationView: View {
                 }
                 Form {
                     Section {
+                        HStack {
+                            Text("Titre")
+                                .font(.title3)
+                            TextField("Titre", text:  $title)
+                                .padding(5)
+                                .frame(height: 50)
+                                .background(.textField)
+                                .cornerRadius(8)
+                        }
                             .padding(5)
                             .frame(height: 50)
                             .background(.textField)
