@@ -130,7 +130,22 @@ struct AdCreationView: View {
                         }
                     }
                 }
+                HStack {
+                    Spacer()
+                    NavigationLink {
+                        // TODO: add posting process
+                        AdPostedView()
+                    } label: {
+                        Text("Poster")
+                            .padding(15)
+                            .font(.title3)
+                            .bold()
+                            .foregroundStyle(.black)
+                            .background(.orangePapaya)
+                            .cornerRadius(8)
+                            .shadow(radius: 5)
                     }
+                    .padding(.trailing, 20)
                 }
             }
         }
