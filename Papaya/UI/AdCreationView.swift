@@ -49,32 +49,54 @@ struct AdCreationView: View {
                                 .background(.textField)
                                 .cornerRadius(8)
                         }
+                        PhotosPicker(
+                            selection: $pickerItem,
+                            matching: .images
+                        ) {
+                            if let pickerImage {
+                                pickerImage
+                                    .resizable()
+                                    .frame(maxWidth: .infinity)
+                            }
+                            else {
+                                VStack(alignment: .center, spacing: 10) {
+                                    Image(systemName: "plus.circle.fill")
+                                        .font(.largeTitle)
+                                        .foregroundStyle(.orangePapaya)
+                                    Text("Ajoutez une photo")
+                                        .foregroundStyle(.black)
+                                }
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                            }
+                        }
+                        .frame(width: .infinity, height:200)
+                        .background(.textField)
+                        .cornerRadius(8)
+                        .shadow(radius: 5)
                             .padding(5)
                             .frame(height: 50)
                             .background(.textField)
                             .cornerRadius(8)
                     }
-                    PhotosPicker(selection: $pickerItem, matching: .images) {
-                        VStack(alignment: .center, spacing: 10) {
-                            Image(systemName: "plus.circle.fill")
-                                .font(.largeTitle)
-                                .foregroundStyle(.orangePapaya)
-                            Text("Ajoutez une photo")
-                                .foregroundStyle(.black)
+
+                        }
                         }
                         .frame(width: .infinity)
                         .padding()
                     }
                     .listRowBackground(Color.clear)
-                    .frame(width: .infinity, height:200)
-                    .background(.textField)
-                    .cornerRadius(8)
-                    .shadow(radius: 5)
-                    HStack {
-                        Picker("Tag", selection: $tagSelection) {
-                            ForEach(AdTag.allCases) { tag in
-                                Text(tag.rawValue)
-                            }
+                }
+                .onChange(of: pickerItem) {
+                    _,
+                    _ in
+                    Task {
+                        if let loadedImage = try? await pickerItem?.loadTransferable(
+                            type: Image.self
+                        ){
+                            pickerImage = loadedImage
+                        } else {
+                            print("Failed to load image")
                         }
                     }
                     HStack {
