@@ -113,19 +113,22 @@ struct AdCreationView: View {
                             )
                         }
                     }
+                    .onChange(of: pickerItem) {
+                        _,
+                        _ in
+                        Task {
+                            if let loadedImage = try? await pickerItem?.loadTransferable(
+                                type: Image.self
+                            ){
+                                pickerImage = loadedImage
+                            } else {
+                                print("Failed to load image")
+                            }
+                        }
+                    }
                     .listRowBackground(Color.clear)
                     .padding(.trailing, 20)
                 }
-                .onChange(of: pickerItem) {
-                    _,
-                    _ in
-                    Task {
-                        if let loadedImage = try? await pickerItem?.loadTransferable(
-                            type: Image.self
-                        ){
-                            pickerImage = loadedImage
-                        } else {
-                            print("Failed to load image")
                         }
                     }
                 }
