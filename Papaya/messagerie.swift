@@ -8,31 +8,33 @@
 import SwiftUI
 
 struct messagerie: View {
-    //faire une copie du array messages pour pouvoir appliquer un state et un append pour mettre a jour la conv
     
+    //faire une copie du array messages pour pouvoir appliquer un state et un append pour mettre a jour la conv
     @State private var comment: String = ""
     @State private var validComment = messages
     var user: User
+    
     var body: some View {
         ZStack {
             BackgroundView()
-            VStack /*(.alignment.center)*/{    //recup le profil + mise forme
-                Image(user.image)
+            VStack {
+                Image(user.userProfilePicture)
                 
-                                ZStack{
+                ZStack {}
                 
-            }
-            VStack{
-                //recuperation des messages
-                ForEach(validComment) {message in
-                    BubbleMessage(message: message)
+                VStack {
+                    //recuperation des messages
+                    ForEach(validComment) { message in
+                        BubbleMessage(message: message)
+                    }
                 }
+                
                 HStack {
-                    TextField("Saisissez votre commentaire", text: $comment) // Var bindée car il y a de l'affichage et la modif
-                    Button{
-                        validComment.append(Message(content: comment, date: "")) //ajout du message dans le tableau
-                        comment = "" // le champ redevient vide apres la validation
-                    }label: {
+                    TextField("Saisissez votre commentaire", text: $comment)
+                    Button {
+                        validComment.append(Message(content: comment, date: ""))
+                        comment = ""
+                    } label: {
                         Image(systemName: "paperplane.fill")
                     }
                 }
@@ -42,5 +44,5 @@ struct messagerie: View {
 }
 
 #Preview {
-    messagerie(user: <#T##User#>)
+    messagerie(user: users[0])
 }
