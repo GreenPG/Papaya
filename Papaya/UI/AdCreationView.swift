@@ -129,7 +129,6 @@ struct AdCreationView: View {
                         }
                     }
                 }
-                .scrollContentBackground(.hidden)
                 HStack {
                     NavigationLink {
                         // TODO: add posting process
@@ -150,6 +149,7 @@ struct AdCreationView: View {
             }
             .padding(20)
         }
+        .scrollContentBackground(.hidden)
     }
 }
 
