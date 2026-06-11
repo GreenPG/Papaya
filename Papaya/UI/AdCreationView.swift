@@ -28,7 +28,7 @@ struct AdCreationView: View {
     var body: some View {
         ZStack{
             BackgroundView()
-            VStack(alignment: .leading ,spacing: 20) {
+            VStack(spacing: 20) {
                 HStack {
                     Text("Poster votre annonce")
                         .font(
@@ -114,6 +114,7 @@ struct AdCreationView: View {
                         }
                     }
                     .listRowBackground(Color.clear)
+                    .padding(.trailing, 20)
                 }
                 .onChange(of: pickerItem) {
                     _,
@@ -130,24 +131,24 @@ struct AdCreationView: View {
                 }
                 .scrollContentBackground(.hidden)
                 HStack {
-                    Spacer()
                     NavigationLink {
                         // TODO: add posting process
                         AdPostedView()
                     } label: {
+                        Spacer()
                         Text("Poster")
                             .padding(15)
-                            .font(.title3)
+                            .font(.title2)
                             .bold()
                             .foregroundStyle(.black)
                             .background(.orangePapaya)
                             .cornerRadius(8)
                             .shadow(radius: 5)
                     }
-                    .padding(.trailing, 20)
                 }
+                .padding(.trailing, 30)
             }
-            .padding()
+            .padding(20)
         }
     }
 }
