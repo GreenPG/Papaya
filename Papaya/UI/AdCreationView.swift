@@ -25,6 +25,7 @@ struct AdCreationView: View {
     @State var tagSelection: AdTag = AdTag.seeds
     @State var description: String = ""
     @State var isContactShowed: Bool = false
+    @FocusState private var isFocused: Bool
     var body: some View {
         ZStack{
             BackgroundView()
@@ -49,6 +50,7 @@ struct AdCreationView: View {
                                 .frame(height: 50)
                                 .background(.textField)
                                 .cornerRadius(8)
+                                .focused($isFocused)
                         }
                         PhotosPicker(
                             selection: $pickerItem,
@@ -104,6 +106,7 @@ struct AdCreationView: View {
                             .lineLimit(5, reservesSpace: true)
                             .background(.textField)
                             .cornerRadius(8)
+                            .focused($isFocused)
 
                         }
                         HStack {
@@ -129,6 +132,13 @@ struct AdCreationView: View {
                     .listRowBackground(Color.clear)
                     .padding(.trailing, 20)
                 }
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button {
+                            isFocused = false
+                        } label: {
+                            Image(systemName: "keyboard.chevron.compact.down")
                         }
                     }
                 }
