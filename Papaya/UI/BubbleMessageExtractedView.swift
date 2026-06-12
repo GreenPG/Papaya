@@ -11,7 +11,7 @@ struct BubbleMessage: View {
     var message: Message
     var body: some View {
         VStack (alignment: message.isUser ? .trailing : .leading) {
-            ZStack(alignment: message.isUser ? .trailing : .leading){
+            ZStack(alignment: message.isUser ? .trailing : .leading){ // ternaire qui gere l'alignement de l'affichage en fction du sender
                 UnevenRoundedRectangle(
                     topLeadingRadius:20,
                     bottomLeadingRadius: 20,
@@ -27,7 +27,7 @@ struct BubbleMessage: View {
                     .frame(maxWidth: 200) //permet de limiter la largeur du texte et donc le retour a la ligne (gestion de la longueur de la bulle de texte en modifiant la longueur du container avec .fixedsize
                     .padding()
             }
-            .fixedSize(horizontal: false, vertical: true)
+            .fixedSize(horizontal: false, vertical: true) //hauteur illimitée mais largeur restreinte
             Text(message.date)
         }
 //        .ignoresSafeArea => pour les backgrounds
