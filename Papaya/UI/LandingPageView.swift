@@ -93,6 +93,15 @@ struct LandingPageView: View {
                         .scrollEdgeEffectStyle(.hard, for:.all)
                         .ignoresSafeArea(.all)
                     }
+                    .padding(.vertical, 20)
+                    VStack(alignment: .leading) {
+                        Text("Jardin du mois")
+                            .font(.custom("Courgette", size: 35))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack {
+                                ForEach(gardens) {garden in
+                                    MonthlyGardenCardView(garden: garden)
                                 }
                                 
                             }
