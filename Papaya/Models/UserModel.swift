@@ -9,8 +9,13 @@ import Foundation
 
 struct User {
     let userName: String
+<<<<<<< HEAD
     let userProfilePicture: String
 //    let userMembershipSince: DateComponents
+=======
+    let userID: Int
+    let userMembershipSince: Date?
+>>>>>>> e708d5d ( add commentModel et messagerie)
     let userAdress: String
     let userStarRating: Float
     let userEverySell: Int
