@@ -14,28 +14,6 @@ struct ReturnData: Identifiable {
     let yield: Double
 }
 
-struct Savings: Identifiable {
-    let id = UUID()
-    let month: String
-    let saving: Double
-}
-
-let savingList: [Savings] = [
-    Savings(month: "january", saving: 32.4),
-    Savings(month: "february", saving: 12.4),
-    Savings(month: "march", saving: 2.4),
-    Savings(month: "april", saving: 33.4),
-    Savings(month: "may", saving: 132.4),
-    Savings(month: "june", saving: 02.4),
-    Savings(month: "july", saving: 2.4),
-    Savings(month: "august", saving: 37.4),
-    Savings(month: "september", saving: 22.4),
-    Savings(month: "october", saving: 12.4),
-    Savings(month: "november", saving: 32.4),
-    Savings(month: "december", saving: 2.4),
-]
-
-let linearGradient = LinearGradient(
     gradient: Gradient(colors: [.white.opacity(0.4), .white.opacity(0.0)]),
     startPoint:  .top,
     endPoint: .bottom
