@@ -11,33 +11,30 @@ struct messagerie: View {
     //faire une copie du array messages pour pouvoir appliquer un state et un append pour mettre a jour la conv
     
     @State private var comment: String = ""
-    @State private var validComment: [String ]= [""]
-//    var user: User
+    @State private var validComment = messages
+    var user: User
     var body: some View {
-        VStack {
-            VStack /*(.alignment.center)*/{
-//                Image()
-//                ZStack{}
-                //recup le profil + mise forme
+        ZStack {
+            BackgroundView()
+            VStack /*(.alignment.center)*/{    //recup le profil + mise forme
+                Image(user.image)
+                
+                                ZStack{
+                
             }
-
             VStack{
-                //recup message
-                ForEach(messages) {message in
+                //recuperation des messages
+                ForEach(validComment) {message in
                     BubbleMessage(message: message)
                 }
-//
-            }
-            
-            HStack {
-                TextField("Saisissez votre commentaire", text: $comment) // Var bindée car il y a de l'affichage et la modif
-                Button{
-                    validComment = $comment
-                    
-                    
-                    comment = ""
-                }label: {
-                    Image(systemName: "paperplane.fill")
+                HStack {
+                    TextField("Saisissez votre commentaire", text: $comment) // Var bindée car il y a de l'affichage et la modif
+                    Button{
+                        validComment.append(Message(content: comment, date: "")) //ajout du message dans le tableau
+                        comment = "" // le champ redevient vide apres la validation
+                    }label: {
+                        Image(systemName: "paperplane.fill")
+                    }
                 }
             }
         }
@@ -45,5 +42,5 @@ struct messagerie: View {
 }
 
 #Preview {
-    messagerie()
+    messagerie(user: <#T##User#>)
 }
