@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    
+    @State private var totalHarvested: Double = 175.0
+    @State private var inputQuantity: String = ""
+    
     var body: some View {
         ZStack{
             BackgroundView()
@@ -27,7 +31,7 @@ struct UserProfileView: View {
                                 .bold()
                                 .italic()
 
-                            Text("🏆 175kg récoltés")
+                            Text("🏆 \(totalHarvested, specifier: "%.0f")kg récoltés")
                                 .font(.subheadline)
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 4)
@@ -47,34 +51,7 @@ struct UserProfileView: View {
                         .stroke(Color.greenPapaya, lineWidth: 1))
                     .padding(.horizontal)
                     
-//                        HStack{
-//
-//                            
-//                            Image("binetteAB")
-//                                .frame(maxWidth: 160)
-//                                .clipShape(.circle)
-//                                
-//                            VStack{
-//                                Text("@LaBinetteDu13")
-//                                    .font(.title2)
-//                                    .bold()
-//                                    .italic()
-//                                Text("175kg récoltés")
-//                                    .padding(5)
-//                                    .background(RoundedRectangle(cornerRadius: 10)
-//                                        .stroke(Color.hazelnutPapaya, lineWidth: 1))
-//                                  
-//                                    
-//                                Text("Planter mes graines, une passion.")
-//                                    .padding(5)
-//                                    .background(RoundedRectangle(cornerRadius: 10)
-//                                        .stroke(Color.greenPapaya, lineWidth: 1))
-//                            }
-//                            
-//                        }
-//                        .padding(.horizontal)
-//                        .background(RoundedRectangle(cornerRadius: 10)
-//                            .stroke(Color.greenPapaya, lineWidth: 1))
+
                     
                     Text("Mon espace")
                         .padding(8)
@@ -100,7 +77,42 @@ struct UserProfileView: View {
                         .scaledToFit()
                         .padding()
                     
+                    HStack{
+                        Text("Quantité")
+                            .padding(8)
+                            .background(RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.greenPapaya, lineWidth: 1))
+                        
+                        TextField("10", text:$inputQuantity)
+                            .keyboardType(.decimalPad)
+                            .multilineTextAlignment(.center)
+                            .frame(width: 80, height: 40)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(8)
+                        
+                        Text("kg")
+                            .foregroundStyle(.secondary)
                     }
+                    Button {
+                        let cleanDoubleInput = inputQuantity.replacingOccurrences(of: ",", with: ".")
+                        if let amount = Double(cleanDoubleInput), amount > 0 {
+                            withAnimation(.easeInOut(duration: 0.3)) {
+                                totalHarvested += amount
+                            }
+                            inputQuantity = ""
+                        }
+                        } label: {
+                            Text("Ajouter")
+                                .font(.headline)
+                                .foregroundStyle(.white)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 50)
+                                .background(inputQuantity.isEmpty ? Color.gray : Color.green)
+                                .cornerRadius(10)
+                                .padding()
+                        }
+                    }
+                    
                 }
             }
         }

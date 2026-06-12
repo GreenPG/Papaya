@@ -14,6 +14,7 @@ struct User: Identifiable {
     let userAdress: String
     let userStarRating: Float
     let userEverySell: Int
+    
 }
 
 let users: [User] = [
