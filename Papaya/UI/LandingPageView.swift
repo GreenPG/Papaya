@@ -8,11 +8,6 @@
 import SwiftUI
 import Charts
 
-struct ReturnData: Identifiable {
-    let id = UUID()
-    let goal: Double
-    let yield: Double
-}
 
     gradient: Gradient(colors: [.white.opacity(0.4), .white.opacity(0.0)]),
     startPoint:  .top,
@@ -51,9 +46,6 @@ struct LandingPageView: View {
                 Image("papaya")
                     .resizable()
                     .frame(width: 200, height: 200)
-                VStack {
-                    Text("Objectif")
-                        .font(.custom("Courgette", size: 25))
                     HStack {
                         VStack {
                             Text(String(format: "%.2f €",sumOfSavings(from: savings)))
@@ -80,6 +72,15 @@ struct LandingPageView: View {
                                     AxisValueLabel()
                                         .foregroundStyle(.white)
                                         .font(.caption)
+                    VStack {
+                        Text("Objectif")
+                            .font(.custom("Courgette", size: 35))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        GoalChartView(data: goalData)
+                            .scaleEffect(2.5)
+                            
+                    }
+                    .padding(.vertical, 40)
                                 }
                                 
                             }
