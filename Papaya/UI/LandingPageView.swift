@@ -26,14 +26,15 @@ struct LandingPageView: View {
     let actualities: [Tutorial] = tutorials
     
     var body: some View {
-        ZStack {
-            BackgroundView()
-            ScrollView {
-                Text("Papaya")
-                    .font(.custom("Courgette", size: 40))
-                Image("papaya")
-                    .resizable()
-                    .frame(width: 200, height: 200)
+        NavigationStack {
+            ZStack {
+                BackgroundView()
+                ScrollView {
+                    Text("Papaya")
+                        .font(.custom("Courgette", size: 40))
+                    Image("papaya")
+                        .resizable()
+                        .frame(width: 200, height: 200)
                     VStack {
                         Text("Objectif")
                             .font(.custom("Courgette", size: 35))
@@ -87,7 +88,6 @@ struct LandingPageView: View {
                                             .padding(.trailing, 5)
                                     }
                                 }
-                                
                             }
                         }
                         .scrollEdgeEffectStyle(.hard, for:.all)
@@ -103,16 +103,12 @@ struct LandingPageView: View {
                                 ForEach(gardens) {garden in
                                     MonthlyGardenCardView(garden: garden)
                                 }
-                                
                             }
                         }
                     }
+                    .padding(.vertical, 20)
                 }
-                VStack {
-                    Text("Jardin du mois")
-                        .font(.custom("Courgette", size: 25))
-                }
-
+                .padding()
             }
         }
     }
