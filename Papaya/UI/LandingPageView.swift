@@ -23,6 +23,7 @@ struct LandingPageView: View {
     @State private var savings: [Savings] = Array(
         savingList[savingList.count-6..<savingList.count]
     )
+    let actualities: [Tutorial] = tutorials
     
     var body: some View {
         ZStack {
@@ -69,18 +70,34 @@ struct LandingPageView: View {
                         SavingsChartView(savings: savingList)
                     }
                     .padding(.vertical, 40)
+                    VStack(alignment: .leading) {
+                        Text("Actualités")
+                            .font(.custom("Courgette", size: 35))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack {
+                                ForEach(
+                                    actualities.enumerated(),
+                                    id: \.offset
+                                ) { _, actuality in
+                                    NavigationLink {
+                                        TutorialView(tutorial: actuality)
+                                    } label : {
+                                        TutorialCardView(tutorial: actuality)
+                                            .padding(.trailing, 5)
+                                    }
                                 }
                                 
                             }
+                        }
+                        .scrollEdgeEffectStyle(.hard, for:.all)
+                        .ignoresSafeArea(.all)
+                    }
                                 }
                                 
                             }
                         }
                     }
-                }
-                VStack {
-                    Text("Actualités")
-                        .font(.custom("Courgette", size: 25))
                 }
                 VStack {
                     Text("Jardin du mois")
