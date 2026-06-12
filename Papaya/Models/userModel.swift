@@ -19,5 +19,5 @@ struct User: Identifiable {
 
 let users: [User] = [
     User(userName: "LaBinetteDu13", userProfilePicture: "binetteAB",/* userMembershipSince: ,*/ userAdress: "17 chemin de l’amoureux des fleurs", userStarRating: 4.3, userEverySell: 42),
-    User(userName: "Mister Courgette", userProfilePicture: "soilAB", userAdress: "4 rue des tourterelles", userStarRating: 3.3, userEverySell: 12),
+    User(userName: "Mister Courgette", userProfilePicture: "matatabiCatto", userAdress: "4 rue des tourterelles", userStarRating: 3.3, userEverySell: 12),
 ]
