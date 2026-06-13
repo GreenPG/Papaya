@@ -20,3 +20,4 @@ struct PlantModel: Identifiable {
 
 
 let tomato = PlantModel(name: "Tomate", picture: Image(.tomateRonde), sunExposure: "min. 6h", watering: "tous les 2 à 3 jours", yield: "3-6kg/saison", tips: tutorials)
+let courgette = PlantModel(name: "Courgette", picture: Image(.courgette), sunExposure: "min. 6h", watering: "tous les 2 à 3 jours", yield: "3-6kg/saison", tips: tutorials)
