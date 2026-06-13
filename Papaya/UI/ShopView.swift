@@ -17,7 +17,7 @@ struct ShopView: View {
                 BackgroundView() //Se place ici car NavStack a son propre bg qui ecraserai celui ci et dans la zstack pour etre sur la couche la plus "profonde" de la view
                 VStack{
                     Text("Market place")
-                        .font(.largeTitle)
+                        .font(.custom("Courgette", size: 50))
                         .frame(alignment: .topLeading)
                     
                     ScrollView{
