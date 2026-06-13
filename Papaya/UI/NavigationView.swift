@@ -22,7 +22,7 @@ struct NavigationView: View {
                 }
             SearchView()
                 .tabItem{
-                    Label("Home", systemImage: "magnifyingglass")
+                    Label("Search", systemImage: "magnifyingglass")
                         .foregroundStyle(.greenPapaya)
                 }
             UserProfileView()
