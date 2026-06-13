@@ -28,6 +28,18 @@ struct UserProfileView: View {
                                     .clipShape(Circle())
                             
                                 VStack(alignment: .leading, spacing: 8) {
+                                    HStack {
+                                        Spacer()
+                                        NavigationLink {
+                                            UserListsView()
+                                        } label: {
+                                            Image(systemName: "leaf")
+                                                .font(.title)
+                                                .foregroundStyle(.black)
+                                        }
+                                        Image(systemName: "gearshape")
+                                            .font(.title)
+                                    }
                                     Text("@LaBinetteDu13")
                                         .font(.custom("Courgette", size: 30))
                                         .bold()
