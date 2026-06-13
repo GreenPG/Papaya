@@ -19,29 +19,31 @@ struct MessagerieView: View {
             BackgroundView()
                 .ignoresSafeArea()
             VStack {
-                Image(users[1].userProfilePicture)
-                    .resizable() // pour redimensionner
-                    .scaledToFill() // pour arrondir
-                    .frame(width: 200, height: 200)
-                    .clipShape(
-                        UnevenRoundedRectangle(cornerRadii:
-                                .init(
-                                    topLeading: 100,
-                                    bottomLeading: 100,
-                                    bottomTrailing: 100,
-                                    topTrailing: 100
-                                )
+                VStack {
+                    Image(users[1].userProfilePicture)
+                        .resizable() // pour redimensionner
+                        .scaledToFill() // pour arrondir
+                        .frame(width: 200, height: 200)
+                        .clipShape(
+                            UnevenRoundedRectangle(cornerRadii:
+                                    .init(
+                                        topLeading: 100,
+                                        bottomLeading: 100,
+                                        bottomTrailing: 100,
+                                        topTrailing: 100
+                                    )
+                            )
                         )
-                    )
                     
-                ZStack {
-                      RoundedRectangle(cornerRadius: 12)
-                    .fill(.greenPapaya.secondary)
-                    .stroke(.black, lineWidth: 3)
-                    .frame(width: 250, height: 50)
-                    
-                    Text(users[1].userName)
-                        .font(.title)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(.greenPapaya.secondary)
+                            .stroke(.black, lineWidth: 3)
+                            .frame(width: 250, height: 50)
+                        
+                        Text(users[1].userName)
+                            .font(.title)
+                    }
                 }
                 .padding(40)
                 ScrollViewReader { updateView in

@@ -18,7 +18,7 @@ struct BubbleMessage: View {
                     bottomTrailingRadius: 0,
                     topTrailingRadius: 20
                 )
-                .fill(.beigePapaya.secondary)
+                .fill(.beigePapaya.opacity(0.2))
                 .stroke(.brownPapaya, lineWidth: 3)
                 
                 

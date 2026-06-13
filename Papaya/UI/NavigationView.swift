@@ -15,6 +15,11 @@ struct NavigationView: View {
                     Label("Home", systemImage: "house.fill")
                         .tint(.greenPapaya)
                 }
+            ShopView()
+                .tabItem{
+                    Label("Market Place", systemImage: "basket.fill")
+                        .tint(.greenPapaya)
+                }
             SearchView()
                 .tabItem{
                     Label("Home", systemImage: "magnifyingglass")

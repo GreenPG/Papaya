@@ -9,34 +9,62 @@ import SwiftUI
 
 struct ShopView: View {
     
-    //    @State var cards: ShopCard
-    //
+    @State private var postedInfo = addModels
+    @State private var showModal = false
     var body: some View {
-        
-        NavigationStack{
             
             ZStack {
-                BackgroundView() //Se place ici car NavStack a son propre bg qui ecraserai celui ci et dans la zstack pour
-                ScrollView{
+                BackgroundView() //Se place ici car NavStack a son propre bg qui ecraserai celui ci et dans la zstack pour etre sur la couche la plus "profonde" de la view
+                VStack{
+                    Text("Market place")
+                        .font(.largeTitle)
+                        .frame(alignment: .topLeading)
                     
-                    VStack(spacing: 16) {
+                    ScrollView{
                         
-                        //                    ForEach($cards) { $card in
-                        //
-                        //                        NavigationLink {
-                        //                            CardDetailView(card:$card)
-                        //                        } label: {
-                        //                            ShopCardView(card: $card)
-                        //                        }
-                        //                        .buttonStyle(.plain)
-                        //                    }
-                        //                    .padding()
-                    }
-                    .navigationTitle("Market Place")
+//                        VStack(spacing: 16) {
+                            ForEach(postedInfo) { info in
+                                VStack (spacing: 16){
+                                Image(info.image)
+                                        .resizable()
+                                        .frame(width: 280, height: 200)
+                                        .cornerRadius(20)
+                                    
+                                    /*@START_MENU_TOKEN@*/Text(info.title)/*@END_MENU_TOKEN@*/
+                                        .font(.title2)
+                                        .underline()
+                                    Text(info.description)
+                                        .font(.body)
+                              
+                                    VStack {
+                                        Button("En savoir +") {
+                                            showModal = true
+                                        }
+                                        .foregroundStyle(.black)
+                                        .underline()
+                                    }
+                                .sheet(isPresented: $showModal) {
+                                    NavigationStack {
+                                        ShopCardView(user: users[1]) // par defaut, scroll vers le bas pour faire disparaitre la modale
+                                    }
+                                }
+                            }
+                                .frame(maxWidth: .infinity)
+                                   .padding(16)
+                                   .background(Color.hazelnutPapaya.opacity(0.5))
+                                   .cornerRadius(20)
+                                   .overlay(
+                                       RoundedRectangle(cornerRadius: 20)
+                                           .stroke(Color.hazelnutPapaya, lineWidth: 2)
+                                   )
+                                   .shadow(color: .black.opacity(0.2), radius: 8)
+                                   .padding(.horizontal, 30)
+                                   .padding(.vertical, 8)
+                         }
+                     }
                 }
             }
-        }
-        .toolbarBackground(.hidden, for: .navigationBar) // permet de rendre transparent d'une toolbar (a preciser dans le for sinon error) notamment utile ici pour le scroll
+        .toolbarBackground(.hidden, for: .navigationBar) // permet de rendre transparent une toolbar (a preciser dans le for sinon error) notamment utile ici pour le scroll
     }
 }
 
