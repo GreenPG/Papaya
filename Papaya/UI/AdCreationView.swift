@@ -25,6 +25,8 @@ struct AdCreationView: View {
     @State var tagSelection: AdTag = AdTag.seeds
     @State var description: String = ""
     @State var isContactShowed: Bool = false
+    @Binding var adList: [AddModel]
+    @Binding var isPosted: Bool
     @FocusState private var isFocused: Bool
     var body: some View {
         ZStack{
@@ -155,7 +157,39 @@ struct AdCreationView: View {
                             .background(.orangePapaya)
                             .cornerRadius(8)
                             .shadow(radius: 5)
+            HStack {
+                Button {
+                    if let pickerImage {
+                        adList
+                            .append(
+                                AddModel(
+                                    title: title,
+                                    description: description,
+                                    image: pickerImage
+                                )
+                            )
+                    } else {
+                        adList
+                            .append(
+                                AddModel(
+                                    title: title,
+                                    description: description,
+                                    image: Image(.binetteAB)
+                                )
+                            )
                     }
+                    print(adList)
+                    isPosted = true
+                } label: {
+                    Spacer()
+                    Text("Poster")
+                        .padding(15)
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(.black)
+                        .background(.orangePapaya)
+                        .cornerRadius(8)
+                        .shadow(radius: 5)
                 }
                 .padding(.trailing, 30)
             }
@@ -166,5 +200,7 @@ struct AdCreationView: View {
 }
 
 #Preview {
-    AdCreationView()
+    @Previewable @State var adds = addModels
+    @Previewable @State var isPosted = false
+    AdCreationView(adList: $adds, isPosted: $isPosted)
 }
