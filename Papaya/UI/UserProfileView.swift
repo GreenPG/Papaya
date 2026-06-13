@@ -47,7 +47,7 @@ struct UserProfileView: View {
                                     Text(
                                         "🏆 \(totalHarvested,specifier: "%.0f")kg récoltés"
                                     )
-                                    .font(.subheadline)
+                                    .font(.custom("LouisGeorgeCafe", size: 17))
                                     .padding(.horizontal, 8)
                                     .padding(.vertical, 4)
                                     .background(
@@ -64,6 +64,7 @@ struct UserProfileView: View {
                             }
                             Text("Planter mes graines, une passion.")
                                 .padding(8)
+                                .font(.custom("LouisGeorgeCafe", size: 17))
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .background(RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color.greenPapaya, lineWidth: 1))
@@ -75,6 +76,7 @@ struct UserProfileView: View {
                         .padding(.horizontal)
                         Text("Mon espace")
                             .padding(8)
+                            .font(.custom("LouisGeorgeCafe", size: 20))
                             .background(RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.greenPapaya, lineWidth: 1))
                         Image("binGardAB")
@@ -83,6 +85,7 @@ struct UserProfileView: View {
                             .scaledToFit()
                             .padding()
                         Text("Résultats")
+                            .font(.custom("LouisGeorgeCafe", size: 20))
                             .padding(8)
                             .background(RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.greenPapaya, lineWidth: 1))
@@ -105,6 +108,7 @@ struct UserProfileView: View {
                             Text("kg")
                                 .foregroundStyle(.secondary)
                         }
+                        .font(.custom("LouisGeorgeCafe", size: 20))
                         Button {
                             let cleanDoubleInput = inputQuantity.replacingOccurrences(
                                 of: ",",
@@ -118,7 +122,7 @@ struct UserProfileView: View {
                             }
                         } label: {
                             Text("Ajouter")
-                                .font(.headline)
+                                .font(.custom("LouisGeorgeCafe", size: 25))
                                 .foregroundStyle(.white)
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 50)

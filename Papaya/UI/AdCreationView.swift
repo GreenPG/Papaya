@@ -44,9 +44,10 @@ struct AdCreationView: View {
                 Section {
                     HStack {
                         Text("Titre")
-                            .font(.title3)
+                            .font(.custom("LouisGeorgeCafe", size: 20))
                         TextField("Titre", text:  $title)
                             .padding(5)
+                            .font(.custom("LouisGeorgeCafe", size: 20))
                             .frame(height: 50)
                             .background(.textField)
                             .cornerRadius(8)
@@ -67,6 +68,7 @@ struct AdCreationView: View {
                                     .font(.largeTitle)
                                     .foregroundStyle(.orangePapaya)
                                 Text("Ajoutez une photo")
+                                    .font(.custom("LouisGeorgeCafe", size: 20))
                                     .foregroundStyle(.black)
                             }
                             .frame(maxWidth: .infinity)
@@ -97,10 +99,12 @@ struct AdCreationView: View {
                                     tagSelection = tag
                                 } label: {
                                     Text(tag.rawValue)
+                                        .font(.custom("LouisGeorgeCafe", size: 20))
                                 }
                             }
                         } label: {
                             Text(tagSelection.rawValue)
+                                .font(.custom("LouisGeorgeCafe", size: 20))
                             Image(systemName: "chevron.up.chevron.down")
                         }
                         .foregroundStyle(.black)
@@ -120,11 +124,13 @@ struct AdCreationView: View {
                         .focused($isFocused)
                         
                     }
+                    .font(.custom("LouisGeorgeCafe", size: 20))
                     HStack {
                         Toggle(
                             "Afficher votre adresse",
                             isOn: $isContactShowed
                         )
+                        .font(.custom("LouisGeorgeCafe", size: 20))
                     }
                 }
                 
@@ -170,7 +176,7 @@ struct AdCreationView: View {
                     Spacer()
                     Text("Poster")
                         .padding(15)
-                        .font(.title2)
+                        .font(.custom("LouisGeorgeCafe", size: 30))
                         .bold()
                         .foregroundStyle(.black)
                         .background(.orangePapaya)

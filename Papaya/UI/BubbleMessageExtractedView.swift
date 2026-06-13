@@ -23,6 +23,7 @@ struct BubbleMessage: View {
                 
                 
                 Text(message.content)
+                    .font(.custom("LouisGeorgeCafe", size: 20))
                     .multilineTextAlignment(.trailing)
                     .frame(maxWidth: 200) //permet de limiter la largeur du texte et donc le retour a la ligne (gestion de la longueur de la bulle de texte en modifiant la longueur du container avec .fixedsize
                     .padding()

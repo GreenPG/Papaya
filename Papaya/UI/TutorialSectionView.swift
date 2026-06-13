@@ -19,10 +19,10 @@ struct TutorialSectionView: View {
                 .cornerRadius(8)
             HStack {
                 Text("\(index)")
-                    .font(.largeTitle)
+                    .font(.custom("LouisGeorgeCafe", size: 45))
                 Spacer()
                 tutorialSection.text
-                    .font(.title3)
+                    .font(.custom("LouisGeorgeCafe", size: 20))
             }
         }
     }

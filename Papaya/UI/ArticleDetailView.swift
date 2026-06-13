@@ -29,13 +29,13 @@ struct ArticleDetailView: View {
                     
                     VStack(alignment: .leading, spacing: 10) {
                         Text(article.name)
-                            .font(.title)
+                            .font(.custom("LouisGeorgeCafe", size: 30))
                             .fontWeight(.bold)
                         
                         Divider()
                         
                         Text(article.description)
-                            .font(.body)
+                            .font(.custom("LouisGeorgeCafe", size: 20))
                             .foregroundColor(.primary)
                             .lineSpacing(7)
                         

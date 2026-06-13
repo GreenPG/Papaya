@@ -17,6 +17,7 @@ struct GoalChartView: View {
             let goalAchievementPercentage = data.yield/data.goal
             Text(goalAchievementPercentage.formatted(.percent.precision(.fractionLength(0))))
                 .foregroundStyle(.orangePapaya)
+                .font(.custom("LouisGeorgeCafe", size: 20))
         }
         .gaugeStyle(.accessoryCircularCapacity)
         .tint(.orangePapaya)

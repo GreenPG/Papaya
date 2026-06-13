@@ -42,7 +42,7 @@ struct MessagerieView: View {
                             .frame(width: 250, height: 50)
                         
                         Text(users[1].userName)
-                            .font(.title)
+                            .font(.custom("LouisGeorgeCafe", size: 30))
                     }
                 }
                 .padding(40)

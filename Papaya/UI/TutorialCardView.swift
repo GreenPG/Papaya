@@ -20,11 +20,11 @@ struct TutorialCardView: View {
                 Text(tutorial.name)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .font(.subheadline)
+                    .font(.custom("LouisGeorgeCafe", size: 17))
                     .foregroundStyle(.black)
             }
             Text(tutorial.intro)
-                .font(.caption2)
+                .font(.custom("LouisGeorgeCafe", size: 13))
                 .multilineTextAlignment(.leading)
                 .lineLimit(2)
                 .foregroundStyle(.black)

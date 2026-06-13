@@ -31,6 +31,7 @@ struct TutorialView: View {
                 HStack {
                     Text(tutorial.intro)
                         .multilineTextAlignment(.leading)
+                        .font(.custom("LouisGeorgeCafe", size: 20))
                     Spacer()
                 }
                 ForEach(

@@ -66,6 +66,7 @@ struct ShopCardView: View {
                                 .padding(.trailing, 2)
                             Text(usersInfo[0].name)
                                 .foregroundStyle(.lightGreenPapaya)
+                                .font(.custom("LouisGeorgeCafe", size: 20))
                         }
                         .padding(.leading, 1)
                         .padding(.top)
@@ -78,6 +79,7 @@ struct ShopCardView: View {
                                 .padding(.trailing, 2)
                             Text("Membre depuis 1664")
                                 .foregroundStyle(.lightGreenPapaya)
+                                .font(.custom("LouisGeorgeCafe", size: 20))
                         }
                         .padding(.leading, 1)
                         .padding(.bottom, 4)
@@ -88,6 +90,7 @@ struct ShopCardView: View {
                                 .foregroundStyle(.orangePapaya)
                             Text(usersInfo[0].adress)
                                 .foregroundStyle(.lightGreenPapaya)
+                                .font(.custom("LouisGeorgeCafe", size: 20))
                         }
                         .padding(.leading, 1)
                         .padding(.bottom, 4)
@@ -98,6 +101,7 @@ struct ShopCardView: View {
                                 .foregroundStyle(.orangePapaya)
                             Text(String(usersShopInfo[0].starRating) + " sur \(String(usersShopInfo[0].sellCount)) échanges réalisés.")
                                 .foregroundStyle(.lightGreenPapaya)
+                                .font(.custom("LouisGeorgeCafe", size: 20))
                         }
                         .padding(.leading,1)
                         .padding(.bottom, 4)

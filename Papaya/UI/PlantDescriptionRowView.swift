@@ -21,6 +21,7 @@ struct PlantDescriptionRowView: View {
                 .foregroundStyle(color)
                 .frame(minWidth: 50, alignment: .center)
             Text(text)
+                .font(.custom("LouisGeorgeCafe", size: 20))
             Spacer()
         }
     }

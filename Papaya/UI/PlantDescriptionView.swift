@@ -48,7 +48,7 @@ struct PlantDescriptionView: View {
                     PlantDescriptionRowView(plant: plant, image: "chart.line.uptrend.xyaxis", color: Color.greenPapaya, text: plant.yield)
                 }
                 Text("Astuces")
-                    .font(.title)
+                    .font(.custom("LouisGeorgeCafe", size: 30))
                     .padding(.top, 20)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 ScrollView(.horizontal, showsIndicators: false) {

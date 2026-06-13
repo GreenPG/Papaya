@@ -55,7 +55,7 @@ struct LandingPageView: View {
                             )
                         )
                         .foregroundStyle(.greenPapaya)
-                        .font(.title)
+                        .font(.custom("LouisGeorgeCafe", size: 30))
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         Text(
@@ -65,7 +65,7 @@ struct LandingPageView: View {
                             )
                         )
                         .foregroundStyle(.greenPapaya)
-                        .font(.title)
+                        .font(.custom("LouisGeorgeCafe", size: 30))
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         SavingsChartView(savings: savingList)

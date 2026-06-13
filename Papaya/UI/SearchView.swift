@@ -65,11 +65,12 @@ struct SearchView: View {
                         }
                     }
                 }
-            } .navigationTitle("Articles")
-                .searchable(
-                    text: $searchText,
-                    placement: .navigationBarDrawer(displayMode: .always)
-                )
+            }
+            .navigationTitle("Articles")
+            .searchable(
+                text: $searchText,
+                placement: .navigationBarDrawer(displayMode: .always)
+            )
         }
     }
 }

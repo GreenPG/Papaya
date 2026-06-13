@@ -25,7 +25,7 @@ struct MonthlyGardenCardView: View {
                     Text(" @\(garden.userName)")
                         .scaledToFit()
                         .multilineTextAlignment(.center)
-                        .font(.subheadline)
+                        .font(.custom("LouisGeorgeCafe", size: 16))
                         .bold()
                         .foregroundStyle(.white)
                         .padding()

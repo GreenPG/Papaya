@@ -27,7 +27,7 @@ struct ArticleThumbnailRec: View {
             HStack(alignment: .top, spacing: 12){
                 VStack(alignment: .leading, spacing: 12){
                     Text(article.name)
-                        .font(.title3)
+                        .font(.custom("LouisGeorgeCafe", size: 20))
                         .fontWeight(.semibold)
                         .foregroundStyle(.primary)
                         .underline()
@@ -35,6 +35,7 @@ struct ArticleThumbnailRec: View {
                     
                     Text(article.description)
                         .foregroundStyle(.secondary)
+                        .font(.custom("LouisGeorgeCafe", size: 18))
                         .lineLimit(2)
                     
                 }
