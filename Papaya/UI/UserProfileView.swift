@@ -18,26 +18,39 @@ struct UserProfileView: View {
             
             ScrollView{
                 VStack{
-                    HStack(alignment: .top, spacing: 16) {
-                        Image("binetteAB")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 80, height: 80)
-                            .clipShape(Circle())
 
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("@LaBinetteDu13")
-                                .font(.title2)
-                                .bold()
-                                .italic()
-
-                            Text("🏆 \(totalHarvested, specifier: "%.0f")kg récoltés")
-                                .font(.subheadline)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 4)
-                                .background(RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.hazelnutPapaya, lineWidth: 1))
-
+                        VStack {
+                            HStack(spacing: 16) {
+                                Image("binetteAB")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Circle())
+                            
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text("@LaBinetteDu13")
+                                        .font(.custom("Courgette", size: 30))
+                                        .bold()
+                                        .italic()
+                                
+                                    Text(
+                                        "🏆 \(totalHarvested,specifier: "%.0f")kg récoltés"
+                                    )
+                                    .font(.subheadline)
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
+                                    .background(
+                                        RoundedRectangle(
+                                            cornerRadius: 10
+                                        )
+                                        .stroke(
+                                            Color.hazelnutPapaya,
+                                            lineWidth: 1
+                                        )
+                                    )
+                                
+                                }
+                            }
                             Text("Planter mes graines, une passion.")
                                 .padding(8)
                                 .frame(maxWidth: .infinity, alignment: .leading)
