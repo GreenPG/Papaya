@@ -30,8 +30,8 @@ struct LandingPageCarrousselExtractedView: View {
                                         RoundedRectangle(cornerRadius: 10)
                                             .stroke(.brownPapaya, lineWidth: 3)
                                     )
-                                    .rotation3DEffect(.degrees(30), axis: (x: 0, y: -1, z: 0))
                             }
+                            .rotation3DEffect(.degrees(30), axis: (x: 0, y: -1, z: 0))
                             .frame(height: 130)
                         }
                     }
@@ -41,11 +41,12 @@ struct LandingPageCarrousselExtractedView: View {
                 .shadow(color: .black, radius: 5, x: 5, y: 5)
                 .scrollTargetBehavior(.viewAligned)
                 .defaultScrollAnchor(.leading)
+                .scrollIndicators(.hidden)
                 Button {
                     
                 } label: {
                     Image(systemName: "cross")
-                        .padding(.trailing)
+                        .padding()
                 }
             }
         }

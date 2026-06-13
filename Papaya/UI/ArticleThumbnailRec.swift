@@ -67,6 +67,7 @@ struct ArticleThumbnailRec: View {
                 }
             }
         } .padding()
+        Divider()
     }
 }
 

@@ -11,7 +11,7 @@ import SwiftUI
 struct PapayaApp: App {
     var body: some Scene {
         WindowGroup {
-            SearchView()
+            NavigationView()
         }
     }
 }

@@ -44,6 +44,7 @@ struct ShopCardView: View {
                 }
                 
                 Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus augue sit amet tellus vehicula, sit amet euismod diam volutpat. Mauris risus massa, ultricies eget eleifend vel, volutpat vel nulla. Cras pharetra sapien turpis, sit amet finibus justo tincidunt sit amet. Duis vel rutrum turpis. Vivamus placerat non ipsum non vestibulum. Aliquam suscipit blandit lacinia. Nunc interdum nulla et molestie volutpat. Quisque ullamcorper iaculis velit ut vehicula. In vitae mi consectetur, viverra risus nec, pretium velit. Donec id ex metus.")
+                    .font(.custom("LouisGeorgeCafe", size: 20))
                     .foregroundStyle(.black)
                     .frame(width: 300)
                     .padding(.leading)
@@ -60,7 +61,7 @@ struct ShopCardView: View {
                             .font(.system(size: 26))
                             .foregroundStyle(.orangePapaya)
                             .padding(.trailing, 2)
-                        Text(users[0].userName)
+                        Text(usersInfo[0].name)
                             .foregroundStyle(.lightGreenPapaya)
                     }
                     .padding(.leading, 1)
@@ -82,8 +83,7 @@ struct ShopCardView: View {
                         Image(systemName: "map")
                             .font(.system(size: 26))
                             .foregroundStyle(.orangePapaya)
-//                            .padding(.trailing, 2)
-                        Text(users[0].userAdress)
+                        Text(usersInfo[0].adress)
                             .foregroundStyle(.lightGreenPapaya)
                     }
                     .padding(.leading, 1)
@@ -93,15 +93,13 @@ struct ShopCardView: View {
                         Image(systemName: "star")
                             .font(.system(size: 26))
                             .foregroundStyle(.orangePapaya)
-//                            .padding(.trailing, 2)
-                        Text(String(users[0].userStarRating) + " sur \(String(users[0].userEverySell)) échanges réalisés.")
+                        Text(String(usersShopInfo[0].starRating) + " sur \(String(usersShopInfo[0].sellCount)) échanges réalisés.")
                             .foregroundStyle(.lightGreenPapaya)
                     }
                     .padding(.leading,1)
                     .padding(.bottom, 4)
                 }
                 .frame(width: 340)
-//                .padding()
                 .background(Color.greenPapaya.opacity(0.5))
                 .cornerRadius(15)
             }

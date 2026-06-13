@@ -25,10 +25,11 @@ struct AdCreationView: View {
     @State var tagSelection: AdTag = AdTag.seeds
     @State var description: String = ""
     @State var isContactShowed: Bool = false
+    @FocusState private var isFocused: Bool
     var body: some View {
         ZStack{
             BackgroundView()
-            VStack(alignment: .leading ,spacing: 20) {
+            VStack(spacing: 20) {
                 HStack {
                     Text("Poster votre annonce")
                         .font(
@@ -49,6 +50,7 @@ struct AdCreationView: View {
                                 .frame(height: 50)
                                 .background(.textField)
                                 .cornerRadius(8)
+                                .focused($isFocused)
                         }
                         PhotosPicker(
                             selection: $pickerItem,
@@ -69,6 +71,17 @@ struct AdCreationView: View {
                                 }
                                 .frame(maxWidth: .infinity)
                                 .padding()
+                            }
+                        }
+                        .onChange(of: pickerItem) {
+                            Task {
+                                if let loadedImage = try? await pickerItem?.loadTransferable(
+                                    type: Image.self
+                                ){
+                                    pickerImage = loadedImage
+                                } else {
+                                    print("Failed to load image")
+                                }
                             }
                         }
                         .frame(width: .infinity, height:200)
@@ -104,6 +117,7 @@ struct AdCreationView: View {
                             .lineLimit(5, reservesSpace: true)
                             .background(.textField)
                             .cornerRadius(8)
+                            .focused($isFocused)
 
                         }
                         HStack {
@@ -113,42 +127,41 @@ struct AdCreationView: View {
                             )
                         }
                     }
+                   
                     .listRowBackground(Color.clear)
+                    .padding(.trailing, 20)
                 }
-                .onChange(of: pickerItem) {
-                    _,
-                    _ in
-                    Task {
-                        if let loadedImage = try? await pickerItem?.loadTransferable(
-                            type: Image.self
-                        ){
-                            pickerImage = loadedImage
-                        } else {
-                            print("Failed to load image")
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button {
+                            isFocused = false
+                        } label: {
+                            Image(systemName: "keyboard.chevron.compact.down")
                         }
                     }
                 }
-                .scrollContentBackground(.hidden)
                 HStack {
-                    Spacer()
                     NavigationLink {
                         // TODO: add posting process
                         AdPostedView()
                     } label: {
+                        Spacer()
                         Text("Poster")
                             .padding(15)
-                            .font(.title3)
+                            .font(.title2)
                             .bold()
                             .foregroundStyle(.black)
                             .background(.orangePapaya)
                             .cornerRadius(8)
                             .shadow(radius: 5)
                     }
-                    .padding(.trailing, 20)
                 }
+                .padding(.trailing, 30)
             }
-            .padding()
+            .padding(20)
         }
+        .scrollContentBackground(.hidden)
     }
 }
 

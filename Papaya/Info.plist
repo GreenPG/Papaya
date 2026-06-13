@@ -5,6 +5,12 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Courgette.ttf</string>
+		<string>LouisGeorgeCafe.ttf</string>
+		<string>LouisGeorgeCafeBold.ttf</string>
+		<string>LouisGeorgeCafeBoldItalic.ttf</string>
+		<string>LouisGeorgeCafeItalic.ttf</string>
+		<string>LouisGeorgeCafeLight.ttf</string>
+		<string>LouisGeorgeCafeLightItalic.ttf</string>
 	</array>
 </dict>
 </plist>

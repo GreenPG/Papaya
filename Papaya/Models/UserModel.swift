@@ -11,10 +11,10 @@ struct User: Identifiable {
     let id = UUID()
     let userName: String
     let userProfilePicture: String
-//    let userMembershipSince: DateComponents
     let userAdress: String
     let userStarRating: Float
     let userEverySell: Int
+    
 }
 
 let users: [User] = [
