@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct AdView: View {
+    @State private var isPosted: Bool = false
+    @Binding var adList: [AddModel]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            BackgroundView()
+            if !isPosted {
+                AdCreationView(adList: $adList, isPosted: $isPosted)
+            } else {
+                AdPostedView()
+            }
+        }
+        .scrollContentBackground(.hidden)
     }
 }
 
 #Preview {
-    AdView()
+    @Previewable @State var adList = addModels
+    AdView(adList: $adList)
 }
