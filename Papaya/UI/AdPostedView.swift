@@ -19,20 +19,8 @@ struct AdPostedView: View {
                     .frame(width: 300)
                     .shadow(radius: 4)
                 Text("Votre annonce a bien été posté")
-                    .font(.largeTitle)
+                    .font(.custom("LouisGeorgeCafe", size: 40))
                     .multilineTextAlignment(.center)
-                NavigationLink {
-                    //TODO: add link to the market place
-                } label: {
-                    Text("Retourner au Troc Place")
-                        .padding(20)
-                        .background(.orangePapaya)
-                        .foregroundStyle(.greenPapaya)
-                        .bold()
-                        .cornerRadius(30)
-                        .font(.title)
-                    
-                }
             }
         }
     }
