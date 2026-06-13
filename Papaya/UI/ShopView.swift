@@ -62,6 +62,21 @@ struct ShopView: View {
                                    .padding(.vertical, 8)
                          }
                      }
+                    NavigationLink {
+                        AdView(adList: $postedInfo)
+                    } label: {
+                        HStack {
+                            Image(systemName: "plus.circle")
+                            Text("Publier une offre")
+                                .font(.custom("LouisGeorgeCafe", size: 30))
+                        }
+                        .font(.title)
+                        .padding(10)
+                        .background(.lightGreenPapaya)
+                        .cornerRadius(8)
+                        .shadow(radius: 5)
+                        .foregroundStyle(.black)
+                    }
                 }
             }
         .toolbarBackground(.hidden, for: .navigationBar) // permet de rendre transparent une toolbar (a preciser dans le for sinon error) notamment utile ici pour le scroll
